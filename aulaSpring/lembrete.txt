@@ -1,0 +1,10 @@
+// Iniciar docker
+docker-compose up -d
+
+// Verificar status docker
+docker ps
+
+// Acesso ao banco via terminal
+docker exec -it postgres_spring3 psql -U root -d bd_spring
+
+

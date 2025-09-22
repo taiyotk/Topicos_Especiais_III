@@ -11,5 +11,9 @@ INSERT INTO aluno (nome, idade) VALUES
 ('Daniel', 21),
 ('Eva', 23);
 
+insert into aluno (nome, idade) values ('Fabio', 25);
+
+select * from aluno;
+
 select nome from aluno
 where idade > 20;
