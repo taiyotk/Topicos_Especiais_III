@@ -1,10 +1,7 @@
-// Iniciar docker
-docker-compose up -d
+docker compose up -d
 
-// Verificar status docker
-docker ps
+cd projeto
 
-// Acesso ao banco via terminal
-docker exec -it postgres_spring3 psql -U root -d bd_spring
+chmod +x mvnw
 
-
+./mvnw spring-boot:run

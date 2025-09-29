@@ -1,0 +1,32 @@
+# Definição de variáveis (ambiente “local” do REST Client)
+@base_url = https://literate-space-disco-4pprq5wpgj9cq4q5-8080.app.github.dev
+
+### Inserir nova pessoa
+POST {{ base_url }}/api/pessoas
+Content-Type: application/json
+
+{
+  "nome": "Pessoa 2",
+  "idade": 32
+}
+
+### Listar todas as pessoas
+GET {{ base_url }}/api/pessoas
+Accept: application/json
+
+### Buscar pessoa por ID
+GET {{ base_url }}/api/pessoas/3
+Accept: application/json
+
+### Atualizar pessoa (PUT)
+PUT {{ base_url }}/api/pessoas/1
+Content-Type: application/json
+
+{
+  "nome": "Pessoa 3",
+  "idade": 35
+}
+
+### Remover pessoa (DELETE)
+DELETE {{ base_url }}/api/pessoas/1
+Accept: */*

@@ -10,39 +10,39 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;  
 import org.springframework.web.bind.annotation.RequestBody;   
 
-import com.example.projeto.service.PessoaService;
-import com.example.projeto.model.Pessoa;
+import com.example.projeto.service.ProdutoService;
+import com.example.projeto.model.Produto;
 
 @RestController
-@RequestMapping("/api/pessoas")
-public class PessoaController{
+@RequestMapping("/api/produtos")
+public class ProdutoController{
     
-    private final PessoaService pessoaService;
+    private final ProdutoService produtoService;
 
-    public PessoaController(PessoaService pessoaService){
-        this.pessoaService = pessoaService;
+    public ProdutoController(ProdutoService produtoService){
+        this.produtoService = produtoService;
     }
 
     @GetMapping
-    public List<Pessoa> listarPessoas(){
-        return pessoaService.listarPessoas();
+    public List<Produto> listarProdutos(){
+        return produtoService.listarProdutos();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Pessoa> buscarPessoa(@PathVariable Long id){
-        return pessoaService.buscarPorId(id)
+    public ResponseEntity<Produto> buscarProduto(@PathVariable Long id){
+        return produtoService.buscarPorId(id)
             .map(ResponseEntity::ok)
             .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public Pessoa criarPessoa(@RequestBody Pessoa pessoa){
-        return pessoaService.salvarPessoa(pessoa);
+    public Produto criarProduto(@RequestBody Produto produto){
+        return produtoService.salvarProduto(produto);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletarPessoa(@PathVariable Long id){
-        pessoaService.deletarPessoa(id);
+    public ResponseEntity<Void> deletarProduto(@PathVariable Long id){
+        produtoService.deletarProduto(id);
         return ResponseEntity.noContent().build();
     }
 }

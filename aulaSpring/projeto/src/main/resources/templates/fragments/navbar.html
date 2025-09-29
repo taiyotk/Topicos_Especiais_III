@@ -1,0 +1,11 @@
+<!-- src/main/resources/templates/fragments/navbar.html -->
+<nav th:fragment="navbar" xmlns:th="http://www.thymeleaf.org" class="navbar" >
+  <!-- checkbox para toggle -->
+  <input type="checkbox" id="menu-checkbox" hidden>
+  <label for="menu-checkbox" class="menu-toggle">☰</label>
+
+  <ul class="nav-list">
+    <li><a th:href="@{/pessoas/listar}" class="nav-link">Lista</a></li>
+    <li><a th:href="@{/pessoas/cadastrar}" class="nav-link">Cadastrar</a></li>
+  </ul>
+</nav>
