@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+div {
+    margin: 5px;
+    padding: 5px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 80%;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 14px 18px;
+    text-align: center;
+}
+
+th {
+    background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+}
+
+tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+tbody tr:hover {
+    background: #f3f7fa;
+}
+
+.botao {
+    background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+    border: none;
+    color: #fff;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(67,206,162,0.08);
+}
+.botao:hover {
+    background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+    box-shadow: 0 4px 16px rgba(24,90,157,0.12);
+}
+
+/* Navbar */
+.navbar {
+    background: #333;
+    padding: 1rem;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #555;
+    border-radius: 4px;
+}
+
+.main-content {
+    padding: 2.5rem 1rem 2rem 1rem;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+.main-content h1 {
+    color: #222;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 8px rgba(250, 92, 125, 0.08);
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    #menu-checkbox:checked~.nav-list {
+        display: flex;
+    }
+
+    .nav-link {
+        padding: 1rem;
+    }
+}

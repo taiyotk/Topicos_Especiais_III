@@ -5,3 +5,6 @@ cd projeto
 chmod +x mvnw
 
 ./mvnw spring-boot:run
+
+cd /workspaces/Topicos_Especiais_III/aulaSpring/app-web
+python3 -m http.server 8081

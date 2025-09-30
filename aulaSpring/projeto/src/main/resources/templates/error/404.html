@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página não encontrada</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .error-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .error-code {
+            font-size: 72px;
+            font-weight: bold;
+            color: #dc3545;
+        }
+        .error-message {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .error-description {
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+        .btn-home {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 5px;
+        }
+        .btn-home:hover {
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div th:replace="fragments/navbar :: navbar"></div>
+    
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <div class="error-message">Página não encontrada</div>
+        <div class="error-description">
+            A página que você está procurando não existe ou foi movida.
+        </div>
+        
+        <div>
+            <a href="/pessoas/listar" class="btn-home">📋 Ver Lista de Pessoas</a>
+            <a href="/pessoas/cadastrar" class="btn-home">➕ Cadastrar Pessoa</a>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <h5>Páginas disponíveis:</h5>
+            <ul style="list-style: none; padding: 0;">
+                <li><strong>Frontend Web App:</strong> <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></li>
+                <li><strong>Lista de Pessoas:</strong> <a href="/pessoas/listar">/pessoas/listar</a></li>
+                <li><strong>Cadastro:</strong> <a href="/pessoas/cadastrar">/pessoas/cadastrar</a></li>
+                <li><strong>API REST:</strong> <a href="/api/pessoas">/api/pessoas</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

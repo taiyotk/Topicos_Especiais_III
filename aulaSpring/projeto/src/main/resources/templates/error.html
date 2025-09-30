@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro - Sistema de Pessoas</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .error-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .error-code {
+            font-size: 72px;
+            font-weight: bold;
+            color: #dc3545;
+        }
+        .error-message {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .error-description {
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+        .btn-home {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 5px;
+        }
+        .btn-home:hover {
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div th:replace="fragments/navbar :: navbar"></div>
+    
+    <div class="error-container">
+        <div class="error-code" th:text="${status ?: 'Erro'}">500</div>
+        <div class="error-message" th:text="${error ?: 'Erro interno do servidor'}">Erro interno do servidor</div>
+        <div class="error-description" th:text="${message ?: 'Ocorreu um erro inesperado. Tente novamente mais tarde.'}">
+            Ocorreu um erro inesperado. Tente novamente mais tarde.
+        </div>
+        
+        <div>
+            <a href="/" class="btn-home">🏠 Página Inicial</a>
+            <a href="/pessoas/listar" class="btn-home">📋 Lista de Pessoas</a>
+        </div>
+        
+        <div style="margin-top: 30px; font-size: 12px; color: #6c757d;" th:if="${trace}">
+            <details>
+                <summary>Detalhes técnicos (desenvolvimento)</summary>
+                <pre th:text="${trace}" style="text-align: left; font-size: 10px; max-width: 800px; margin: 10px auto; overflow: auto;"></pre>
+            </details>
+        </div>
+    </div>
+</body>
+</html>
