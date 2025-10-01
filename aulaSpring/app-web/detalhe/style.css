@@ -1,0 +1,79 @@
+.person-avatar {
+    margin-bottom: 1rem;
+}
+
+.person-avatar i {
+    transition: color 0.3s ease;
+}
+
+.person-avatar:hover i {
+    color: #007bff !important;
+}
+
+.info-box {
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.info-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.info-label {
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-value {
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-header {
+    border-bottom: none;
+    padding: 1.5rem;
+}
+
+.btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 10px;
+}
+
+#person-details {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-body {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    .person-avatar i {
+        font-size: 3rem !important;
+    }
+    
+    .info-box {
+        margin-bottom: 1rem;
+    }
+}
