@@ -1,0 +1,3 @@
+Flask>=2.0
+ntplib>=0.3
+pytz
